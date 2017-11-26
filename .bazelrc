@@ -107,7 +107,7 @@ build:tsan --linkopt -fsanitize=thread
 
 
 #                   Python3 Toolchain
-build --python_top=tools/python:py-3
+#build --python_top=tools/python:py-3
 
 
 #                   Protobuf Toolchains

@@ -5,6 +5,7 @@ def repositories():
 
 def _bazel_rules():
     _pex_rules()
+    _docker_rules()
 
 
 def _pex_rules():
@@ -14,6 +15,21 @@ def _pex_rules():
         name = 'io_bazel_rules_pex',
         strip_prefix = '%s-%s' % (git_name, commit_md5),
         url = 'https://github.com/qzmfranklin/%s/archive/%s.tar.gz' % (git_name, commit_md5)
+    )
+
+
+def _docker_rules():
+    #git_name = 'bazel_rules_docker'
+    #commit_md5 = 'caa55f1e00e5909dbd689f298e2c6d3ef3e65d81'
+    #native.http_archive(
+        #name = 'io_bazel_rules_docker',
+        #strip_prefix = '%s-%s' % (git_name, commit_md5),
+        #url = 'https://github.com/qzmfranklin/%s/archive/%s.tar.gz' % (git_name, commit_md5)
+    #)
+    native.git_repository(
+        name = "io_bazel_rules_docker",
+        remote = "https://github.com/bazelbuild/rules_docker.git",
+        commit = "caa55f1e00e5909dbd689f298e2c6d3ef3e65d81",
     )
 
 
